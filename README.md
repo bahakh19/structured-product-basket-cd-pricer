@@ -47,21 +47,20 @@ The term sheet has a tenth stock Silver Wheaton which is not in the Bloomberg da
 
 For each stock $i$ and valuation date $t$:
 
-$$
-R_i(t) = \begin{cases}
-6.25\% & \text{si } S_i(t) \ge S_i(0) \\
-\max\left(\frac{S_i(t)}{S_i(0)} - 1, -30\%\right) & \text{sinon}
+```math
+R_i(t)=\begin{cases}
+6.25\% & \text{si } S_i(t)\ge S_i(0) \\
+\max\left(\frac{S_i(t)}{S_i(0)}-1,\ -30\%\right) & \text{sinon}
 \end{cases}
-$$
+```
 
-$$
-C(t) = 100 \times \max\left(\frac{1}{9} \sum_{i=1}^{9} R_i(t), 0\right)
-$$
+```math
+C(t)=100\times\max\left(\frac{1}{9}\sum_{i=1}^{9}R_i(t),\ 0\right)
+```
 
-$$
-P = \sum_{k=1}^{7} DF(t_k) \, \mathbb{E}[C(t_k)] + 100 \cdot DF(t_7)
-$$
-
+```math
+P=\sum_{k=1}^{7}DF(t_k)\,\mathbb{E}\left[C(t_k)\right]+100\cdot DF(t_7)
+```
 ## Model
 
 * **Rates:** USD zero-coupon curve with annual compounding deposits up to the first Eurodollar futures date (18 June 2012) the futures strip chained from one futures date to the next then the 2- to 10-year par swaps bootstrapped year after year. The curve reprices every swap at par. Discount factors are taken back to the settlement date on which the CD is paid for.
