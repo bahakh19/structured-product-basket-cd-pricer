@@ -47,12 +47,12 @@ The term sheet has a tenth stock, Silver Wheaton, which is not in the Bloomberg 
 
 For each stock $i$ and valuation date $t$:
 
-$$
+```math
 R_i(t)=\begin{cases}
-6.25\% & \text{si } S_i(t)\ge S_i(0)\\
-\max\left(\dfrac{S_i(t)}{S_i(0)}-1,\ -30\%\right) & \text{sinon}
+6.25\% & \text{si } S_i(t)\ge S_i(0) \\
+\max\left(\frac{S_i(t)}{S_i(0)}-1,\,-30\%\right) & \text{sinon}
 \end{cases}
-$$
+```
 
 $$
 C(t)=100\times\max\Big(\frac{1}{9}\sum_{i=1}^{9}R_i(t),\ 0\Big),\qquad P=\sum_{k=1}^{7}DF(t_k)\,\mathbb{E}\big[C(t_k)\big]+100\,DF(t_7)
